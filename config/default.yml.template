@@ -1,0 +1,14 @@
+---
+database:
+  # ConnectionOptions
+  host: 'abc.example.com'
+  port: 3306
+  user: someuser
+  password: xxxxxx
+  database: somedatabase
+  timezone: '+00:00'
+  connectTimeout: 3000
+  # PoolOptions
+  waitForConnections: true
+  connectionLimit: 10
+  queueLimit: 0
