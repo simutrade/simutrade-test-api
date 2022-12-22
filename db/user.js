@@ -9,10 +9,13 @@ const pool = require('./connection-pool');
 
 module.exports = {
     findUsernameById: async function (id) {
-        let sql = 'SELECT username FROM User WHERE id = ?';
-        let rows, fields;
-        [rows, fields] = await pool.query(sql, [id]);
-        return rows['username'];
+        try {
+            let sql = 'SELECT username FROM User WHERE id = ?';
+            let rows, fields;
+            [rows, fields] = await pool.query(sql, [id]);
+            return rows[0]['username'];
+        } catch (e){
+            return null;
+        }
     },
-    
 }
