@@ -3,6 +3,7 @@ const gameController = require('./controllers/game-controller');
 const userController = require('./controllers/user-controller');
 var router = express.Router();
 
+router.get('/code', gameController.code);
 router.get('/hello', gameController.hello);
 router.get('/user/:id', userController.find);
 
