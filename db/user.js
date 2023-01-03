@@ -18,4 +18,16 @@ module.exports = {
             return null;
         }
     },
+    wholeuser: async function () {
+        try {
+            let sql = 'SELECT * FROM User';
+            let rows, fields;
+            [rows] = await pool.query(sql);
+        
+            return rows;
+        } catch (e){
+            return null;
+        }
+    },
+
 }
