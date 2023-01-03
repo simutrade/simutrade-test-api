@@ -22,5 +22,19 @@ module.exports = {
         } else {
             return res.json("User not found");
         }
+    },
+    whole: async function (req, res) {
+        let users=await db.user.wholeuser();
+
+        console.log(users);
+        if (users) {
+            // if the user is found
+            return res.json({
+                infor:users,
+
+            });
+        } else {
+            return res.json("User not found");
+        }
     }
 }
