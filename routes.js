@@ -7,5 +7,6 @@ router.get('/hello', gameController.hello);
 router.get('/user/:id', userController.find);
 
 /* TODO: You can add your routes here */
+router.get('/game/:id',gameController.displayGameInfo)
 
 module.exports = router;
